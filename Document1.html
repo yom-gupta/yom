@@ -5,8 +5,15 @@
 
 <script>
 function countDown(secs,elem) {
+	var minx;
+	var secr;
+	minx = parseInt( secs / 60 );
+	secr = ( secs - minx *60);
+
 	var element = document.getElementById(elem);
-	element.innerHTML = "maths stara in  "+secs+" seconds";
+
+	//element.innerHTML = " countDown in  "+secs+" seconds";
+	element.innerHTML = " countDown in  "+ minx + " min " + secr + " seconds";
 	if(secs < 1) {
 		clearTimeout(timer);
 		element.innerHTML = '<h2>Countdown Complete!</h2>';
@@ -15,6 +22,12 @@ function countDown(secs,elem) {
 	secs--;
 	var timer = setTimeout('countDown('+secs+',"'+elem+'")',1000);
 }
+
 </script>
+
 <div id="status"></div>
-<script>countDown(240,"status");</script></body></html>
+
+<script>
+countDown(120,"status");
+</script>
+</body></html>
