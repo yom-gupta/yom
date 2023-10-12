@@ -1,0 +1,103 @@
+<html>
+<head>
+<style>
+    body{
+        background: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+color: white;
+text-align: center;
+    }
+.cal{
+    margin:40% auto;
+    background:#000;
+    height: 40vh;
+    width: 50vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius:30px; 
+    border-bottom-right-radius:30px; 
+    box-shadow: 0px 0px 500000px #ffffff;
+    border: 1px solid #000;
+}
+.cal:hover{
+    background: rgb(192, 83, 255);
+    color: black;
+}
+.cal input, select, option{
+    margin: 10px auto;
+    height: 30px;
+    border-radius: 30px;
+    border-color: transparent;
+    padding-left: 20px;
+    width: 80%;
+}
+.cal h1{
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+}
+p{
+    color: white;
+}
+</style>
+
+</head>
+<body>
+
+    <div class="cal">
+        <h1>Calculater</h1>
+<input type="number" id="x" placeholder="first number">
+<input type="number" id="y" placeholder="sec number">
+<!-- <input type="text" id="z" placeholder="select"> -->
+<select  id="op" onclick="squar()">
+    <option value="+">Add</option>
+    <option value="-">Subtraction</option>
+    <option value="*">Multiplication</option>
+    <option value="/">Division</option>
+</select>
+<!-- <button onclick="squar();" >square</button> -->
+<p id="vbn"></p>
+
+</div>
+
+
+
+<script>
+ function squar(){
+    // let x = document.getElementById('x').value;
+    // let  y =document.getElementById('y').value;
+    let x = parseFloat(document.getElementById('x').value);
+            let y = parseFloat(document.getElementById('y').value);
+    let z =document.getElementById('op').value;
+    
+   let error = 'Please Enter Operation';
+    //     let sqr;
+    //    sqr= x + y;
+        // alert(sqr);
+ 
+    let result; 
+
+
+if (z == '+') { 
+    result = x + y;
+}
+else if (z == '-') {
+    result = x - y;
+}
+else if (z == '*') { 
+    result = x * y;
+}
+else if(z == '/') {
+    result = x / y;
+}
+else{
+    result = error;
+}
+ document.getElementById('vbn').innerHTML= "Result:  "  + result;
+    }  
+    </script>
+</body>
+</html>
